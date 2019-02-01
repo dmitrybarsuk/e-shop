@@ -1,0 +1,70 @@
+@import url(https://fonts.googleapis.com/css?family=Lora);
+nav {
+    display: block;
+    width: 960px;
+    margin: 0 auto 30px;
+    padding-left: 0px;
+    background: black;
+}
+ul {
+    margin: 0;
+    width: 960px;
+    list-style: none;
+}
+ul:after {
+    display: block;
+    content: ' ';
+    clear: both;
+    float: none;
+
+}
+ul.menu > li {
+    float: left;
+    position: relative;
+}
+ul.menu > li > a {
+    display: block;
+    padding: 10px;
+    border-right: 1px solid black;
+    background: black;
+    color: white;
+    text-decoration: none;
+    font-family: 'Lora', serif;
+    transition:  linear;
+}
+ul.menu > li > a:hover {
+    background: rgba(35,35,35,0.95);
+}
+ul.submenu {
+    display: none;
+    position: absolute;
+    width: 120px;
+    top: 37px;
+    left: 0;
+    border: 1px solid black;
+    background: black;
+}
+ul.submenu > li {
+    display: block;
+}
+ul.submenu > li > a {
+    display: block;
+    padding: 10px;
+    color: white;
+    background-color: black;
+    text-decoration: none;
+    font-family: 'Lora', serif;
+    transition:  linear;
+}
+ a:active{
+     outline: none;
+     outline-color: white;
+ }
+ul.submenu > li > a:hover {
+    text-decoration: none;
+    background: rgba(35,35,35,0.95);
+}
+
+ul.menu > li:hover > ul.submenu {
+    display: block;
+}

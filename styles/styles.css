@@ -1,0 +1,199 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    /*width: 960px;*/
+   /* margin-left:20%;*/
+    background: url("../pictures/bg.png") repeat;
+}
+h1{
+    font-family: 'Lora', serif;
+}
+.header{
+    width: 100%;
+    height: 200px;
+    background: black;
+    display: block;
+    position: center;
+
+}
+span.header-text{
+    text-align: center;
+    color: white;
+    margin-top: 5em;
+    margin-left: 22em;
+    position: absolute;
+
+}
+
+
+#site{
+    margin-left:20%;
+    width:960px;
+    height: auto;
+    text-align:left;
+    background: white scroll;
+    position: absolute;
+    padding-bottom: 20px;
+}
+
+
+/*.flex-container{ выравнинвание форм вертикально
+    width: 100%;
+    max-width: 1170px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto;
+    padding: auto;
+}*/
+.field {clear:both; text-align:right;  line-height:25px;}
+.main {
+    float:left;
+    padding:30px;
+    margin-left: 22em;
+    background: darkgrey;
+    border-radius: 10px;
+}
+ .main label {
+    float: left;
+}
+ .main input[type=submit]{
+    padding: 5px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: black;
+    border-color: black;
+     color: white;
+     text-align: center;
+     margin: 10px;
+}
+.main input[type=text], input[type=password], input[type=email], input[type=tel], input[type=date] {
+    padding: 0 10px;
+    width: 120px;
+    height: 30px;
+    color: #bbb;
+    text-shadow: 1px 1px 1px black;
+    background: rgba(0, 0, 0, 0.16);
+    border: 0;
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.06);
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.06);
+    margin: 10px 10px 0 ;
+}
+.main input[type=text]:focus, input[type=password]:focus, input[type=email], input[type=tel], input[type=date] {
+    color: white;
+    background: rgba(0, 0, 0, 0.1);
+    outline: 0;
+}
+.main input, button,label {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.aboutme{
+    margin: 20px;
+    position: absolute;
+    background: darkgray;
+    border-radius: 10px;
+    padding-bottom: 100px;
+    margin-left: 60px;
+}
+.aboutme p{
+    margin: 10px;
+    font-family: 'Lora', serif;;
+}
+#changeinfo{
+    padding-top: 10px;
+    text-align: center;
+    margin-left: 500px;
+    margin-top: 10px;
+}
+
+#changeinfo label{
+    text-align: center;
+    margin-top: 15px;
+}
+/*div.hidepage{
+    position: absolute;
+    width: 120px;
+    border: 1px solid black;
+    display: none;
+}
+
+#hiddenshow{
+    //display: none;
+}
+#hiddenshow input[type=checkbox]:checked ~ div.hidepage {
+    display: block;
+};*/
+.showusers{
+    position: relative;
+    border-radius: 10px;
+    padding: 5px;
+}
+.spoiler >  input + .showusers {
+	display: none;
+}
+.spoiler >  input:checked + .showusers {
+	display: block;
+}
+#hidecheck{
+    display: none;
+}
+.admin{
+    margin: 20px;
+}
+#opis input.text {
+    width:  200px;
+    height: 15px;
+    padding: 5px 10px 5px 10px;
+    border:1px solid black;
+    font-size:14px;
+    font-family: 'Lora';
+}
+#admdiv{
+    margin-left: 30px;
+}
+#admdiv input[type=number]{
+    padding: 0 10px;
+    width: 120px;
+    height: 30px;
+    color: #bbb;
+    text-shadow: 1px 1px 1px black;
+    background: rgba(0, 0, 0, 0.16);
+    border: 0;
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.06);
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.06);
+    margin: 10px 10px 0;
+}
+.prods{
+    margin: 20px;
+    border: solid 3px black;
+    border-radius: 5px;
+    width: 200px;
+    padding: 20px;
+}
+
+#content div {
+    display: table-row;
+    border: solid 1px green;
+}
+
+#content div div {
+    display: table-cell;
+    border: solid 1px navy;
+}
+.form-search{
+    color: rgb(255, 255, 255);
+    border: 2px solid rgb(100, 117, 134);
+    padding: 5px 2px 5px 30px;
+    position: absolute;
+    margin-top: 200px;
+}
