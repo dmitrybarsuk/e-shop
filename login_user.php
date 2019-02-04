@@ -25,7 +25,7 @@ $password = trim($password);
 $password = md5($password);
 include("db_connection.php");
 
-$sql_u = "SELECT * FROM Users WHERE login='$login'";
+$sql_u = "SELECT * FROM UsersLogin WHERE login='$login'";
 $result = mysqli_query($db, $sql_u) or trigger_error(mysqli_error() . " in " . $sql_u);
 $myrow = mysqli_fetch_array($result);
 if (empty($myrow['password'])) {

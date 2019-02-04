@@ -90,9 +90,9 @@ $password = md5($password);
 // подключаемся к базе
 include("db_connection.php");// файл db_connection.php должен быть в той же папке, что и все остальные, если это не так, то просто измените путь
 // проверка на существование пользователя с таким же логином
-$sql1 ="SELECT idUsers FROM Users WHERE login='$login'";
-$sql2 = "INSERT INTO Users(login,password,email,firstname, secondname, phone, adress,gender,BirthDay) VALUES('$login','$password','$email','$firstname','$lastname','$phone','$adress','$gender','$birthday')";
-
+$sql1 ="SELECT idUsers FROM UsersLogin WHERE login='$login'";
+$sql2 = "INSERT INTO UsersLogin(login,password) VALUES('$login','$password')";
+$sql3 = "INSERT INTO Users(email,firstname, secondname, phone, adress,gender,BirthDay) VALUES ('$email','$firstname','$lastname','$phone','$adress','$gender','$birthday')";
 $result = mysqli_query($db,$sql1) or trigger_error(mysqli_error()." in ". $sql1);
 $myrow = mysqli_fetch_array($result);
 if (!empty($myrow['idUsers'])) {
@@ -100,8 +100,10 @@ if (!empty($myrow['idUsers'])) {
 }
 // если такого нет, то сохраняем данные
 $result2 = mysqli_query($db,$sql2) or trigger_error(mysqli_error($db)." in ". $sql2);
-// Проверяем, есть ли ошибки
-if ($result2 == 'TRUE') {
+$result3 =  mysqli_query($db,$sql2) or trigger_error(mysqli_error($db)." in ". $sql3);
+
+    // Проверяем, есть ли ошибки
+if ($result2 && $result3) {
     echo "Вы успешно зарегистрированы! Теперь вы можете зайти на сайт. <a href='index.php'>Главная страница</a>";
 } else {
     echo "Ошибка! Вы не зарегистрированы.";
