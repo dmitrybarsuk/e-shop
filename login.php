@@ -26,7 +26,7 @@
     <p>
         <input type="submit" name="submit" value="Войти">
         <br>
-        <a href="http://localhost:63342/e-shop/registration.php">Зарегистрироваться</a>
+        <a href="/registration.php">Зарегистрироваться</a>
     </p>
 </div></form>
 <!--<a class="close"title="Закрыть" href="#close"></a> -->

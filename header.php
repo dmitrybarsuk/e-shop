@@ -15,10 +15,10 @@ margin-left: 767px
 "></form>
     <nav>
         <ul class="menu">
-            <li><a href="http://localhost:63342/e-shop/index.php">Home</a> </li>
+            <li><a href="/index.php">Home</a> </li>
             <li><a href="#">Личный кабинет</a>
             <ul class="submenu">
-                <li><?php if(empty($_SESSION['login'])){ echo '<a href="http://localhost:63342/e-shop/login.php">Войти</a>' ?>
+                <li><?php if(empty($_SESSION['login'])){ echo '<a href="/login.php">Войти</a>' ?>
                     <?php }else echo ("<a href=\"exit.php\">Выйти </a>") ?>
                 <li><a href="office.php">Изменить информацию</a></li>
                 <?php if(!empty($_SESSION['login']) && $_SESSION['login'] == "admin"){
@@ -26,7 +26,7 @@ margin-left: 767px
                 } else {}?>
             </ul>
             </li>
-            <li><a href="http://localhost:63342/e-shop/registration.php">Регистрация</a></li>
+            <li><a href="/registration.php">Регистрация</a></li>
       <!--      <li><a href="#">Категории</a>
             <ul class="submenu">
                 <li><a href="#">Все для дома</a></li>
