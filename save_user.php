@@ -91,6 +91,7 @@ $password = md5($password);
 include("db_connection.php");// файл db_connection.php должен быть в той же папке, что и все остальные, если это не так, то просто измените путь
 // проверка на существование пользователя с таким же логином
 $sql1 ="SELECT idUsers FROM UsersLogin WHERE login='$login'";
+$sqlId = "SELECT MAX(idUsers) FROM UsersLogin";
 $sql2 = "INSERT INTO UsersLogin(login,password) VALUES('$login','$password')";
 $sql3 = "INSERT INTO Users(email,firstname, secondname, phone, adress,gender,BirthDay) VALUES ('$email','$firstname','$lastname','$phone','$adress','$gender','$birthday')";
 $result = mysqli_query($db,$sql1) or trigger_error(mysqli_error()." in ". $sql1);
