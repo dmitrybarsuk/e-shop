@@ -1,6 +1,6 @@
 <!-- Выборка картинки из бд -->
 <?php
-include("bd.php");
+include("db_connection.php");
 if (isset($_GET['id'])) {
     $id = (int)$_GET['id'];
     if ($id > 0) {

@@ -15,7 +15,7 @@ session_start();
 <div id="site">
     <?php
     require_once $_SERVER['DOCUMENT_ROOT'] . '/header.php';
-    include("bd.php");
+    include("db_connection.php");
     if (!empty($_SESSION['login']) && $_SESSION['login'] == "admin") {
         ?>
         <div class="admin">

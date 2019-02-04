@@ -14,7 +14,7 @@ session_start();
 <div id="site">
     <?php
     include("header.php");
-    include("bd.php");
+    include("db_connection.php");
     if (isset($_GET['q'])) {
         $search_q = $_GET['q'];
         $search_q = trim($search_q);

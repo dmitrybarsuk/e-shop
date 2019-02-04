@@ -16,7 +16,7 @@
     if (empty($_SESSION['login'])) {
         header("Location:login.php");
     } else {
-        include("bd.php");
+        include("db_connection.php");
         $login = $_SESSION['login'];
         $query = "SELECT firstname, secondname, phone, email, adress, BirthDay, registrationDate FROM Users WHERE login='$login'";
         $result = mysqli_query($db, $query) or trigger_error(mysqli_error() . " in " . $query);

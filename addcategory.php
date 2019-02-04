@@ -2,7 +2,7 @@
 <?php
 session_start();
 global $result2;
-include("bd.php");
+include("db_connection.php");
 if (isset($_POST['name'])) {
     $productname = $_POST['name'];
     if ($productname == '') {

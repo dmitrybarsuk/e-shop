@@ -18,7 +18,7 @@
     }
     else{
     ?>
-        <form action="http://localhost:63342/e-shop/save_user.php" method="post">
+        <form action="/save_user.php" method="post">
             <div class ="main">
                 <div class="field"><label for="log">Ваш логин:</label>
                     <input class="login" id="log" name="login" type="text" size="16" maxlength="16">

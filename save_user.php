@@ -88,7 +88,7 @@ $firstname = trim($firstname);
 $lastname = trim($lastname);
 $password = md5($password);
 // подключаемся к базе
-include("bd.php");// файл bd.php должен быть в той же папке, что и все остальные, если это не так, то просто измените путь
+include("db_connection.php");// файл db_connection.php должен быть в той же папке, что и все остальные, если это не так, то просто измените путь
 // проверка на существование пользователя с таким же логином
 $sql1 ="SELECT idUsers FROM Users WHERE login='$login'";
 $sql2 = "INSERT INTO Users(login,password,email,firstname, secondname, phone, adress,gender,BirthDay) VALUES('$login','$password','$email','$firstname','$lastname','$phone','$adress','$gender','$birthday')";

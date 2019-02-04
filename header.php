@@ -22,7 +22,7 @@ margin-left: 767px
                     <?php }else echo ("<a href=\"exit.php\">Выйти </a>") ?>
                 <li><a href="office.php">Изменить информацию</a></li>
                 <?php if(!empty($_SESSION['login']) && $_SESSION['login'] == "admin"){
-                    echo ("<li><a href='adminpanel.php'>Админ-панель</a></li>");
+                    echo ("<li><a href='/adminpanel.php'>Админ-панель</a></li>");
                 } else {}?>
             </ul>
             </li>

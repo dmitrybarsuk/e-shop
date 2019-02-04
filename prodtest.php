@@ -16,7 +16,7 @@ session_start();
 <div id="site">
     <?php
     require_once $_SERVER['DOCUMENT_ROOT'] . '/header.php';
-    include("bd.php");
+    include("db_connection.php");
     $idProd = 23;
     $query = "SELECT * FROM Products WHERE idProducts = '$idProd' ";
     $result = mysqli_query($db, $query) or trigger_error(mysqli_error() . " in " . $query);;

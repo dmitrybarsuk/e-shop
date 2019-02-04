@@ -1,7 +1,7 @@
 <!-- Обраюботчик покупки -->
 <?php
 session_start();
-include("bd.php");
+include("db_connection.php");
 
 if(isset($_POST['idProd'])){
 $id = (int)$_POST['idProd'];
