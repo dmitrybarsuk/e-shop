@@ -26,18 +26,16 @@ $password = md5($password);
 include("db_connection.php");
 
 $sql_u = "SELECT * FROM UsersLogin WHERE login='$login'";
-$result = mysqli_query($db, $sql_u) or trigger_error(mysqli_error() . " in " . $sql_u);
+$result = mysqli_query($db, $sql_u) or trigger_error(mysqli_error($db) . " in " . $sql_u);
 $myrow = mysqli_fetch_array($result);
 if (empty($myrow['password'])) {
     exit ("Извините, введённый вами login или пароль неверный.");
 } else {
-    if ($myrow['password'] == $password) { //TODO: Сделать md5 хэширование
+    if ($myrow['password'] == $password) {
         $_SESSION['login'] = $myrow['login'];
         $_SESSION['idUsers'] = $myrow['idUsers'];
         exit("<html><head><meta    http-equiv='Refresh' content='0;    URL=index.php'></head></html>");
     } else {
-        //если пароли не сошлись
-
         exit ("Извините, введённый вами login или пароль неверный.");
     }
 }

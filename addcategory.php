@@ -76,11 +76,11 @@ if (empty($productname) or empty($price) or empty($category) or empty($subcatego
                       VALUES ('$productname','$price','$category','$subcategory','$storage','$articul','$idProviders','$description',
                      '$weight','$height','$length','$width')";
 
-    $result = mysqli_query($db, $query);// or trigger_error(mysqli_error() . " in " . $query);
+    $result = mysqli_query($db, $query);
     echo mysqli_errno($db) . ": " . mysqli_error($db) . "\n";
-      $idPicres = mysqli_query($db, "SELECT PicCount()");
-     $myrow1 = $myrow = mysqli_fetch_array($idPicres);
-     $idPic = (int)$myrow1['PicCount()'];
+    $idProducts = mysqli_query($db, "SELECT MAX(idProducts) as maxId from products");
+     $myrow1 = mysqli_fetch_array($idProducts);
+     $idProd = (int)$myrow1['maxId'];
     if( !empty( $_FILES['image']['name'] ) ) {
          // Проверяем, что при загрузке не произошло ошибок
          if ($_FILES['image']['error'] == 0) {
@@ -91,9 +91,12 @@ if (empty($productname) or empty($price) or empty($category) or empty($subcatego
                  // Экранируем специальные символы в содержимом файла
                  $image = mysqli_escape_string($db,$image);
                  // Формируем запрос на добавление файла в базу данных
-                 $queryimg = "INSERT INTO `Pictures`(idProducts,picture) VALUES('$idPic', '$image')"; //TODO: Хранимая функция
+                 $queryimg = "INSERT INTO Pictures(idProducts,picture) VALUES($idProd, $image)"; //TODO: Хранимая функция
                  // После чего остается только выполнить данный запрос к базе данных
                  $result2 = mysqli_query($db,$queryimg)or trigger_error(mysqli_error($db)." in ". $queryimg);
+             }
+             else{
+                 echo("Не картинка");
              }
          }
      }

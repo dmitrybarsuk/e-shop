@@ -92,16 +92,16 @@ include("db_connection.php");// файл db_connection.php должен быть
 // проверка на существование пользователя с таким же логином
 $sql1 ="SELECT idUsers FROM UsersLogin WHERE login='$login'";
 $sqlId = "SELECT MAX(idUsers) FROM UsersLogin";
-$sql2 = "INSERT INTO UsersLogin(login,password) VALUES('$login','$password')";
-$sql3 = "INSERT INTO Users(email,firstname, secondname, phone, adress,gender,BirthDay) VALUES ('$email','$firstname','$lastname','$phone','$adress','$gender','$birthday')";
+$insertLogin = "INSERT INTO userslogin(login,password) VALUES('$login','$password')";
+$insertUserInfo = "INSERT INTO Users(idUsers,email,firstname, secondname, phone, adress,gender,BirthDay) VALUES ((SELECT MAX(idUsers) from userslogin),'$email','$firstname','$lastname','$phone','$adress','$gender','$birthday')";
 $result = mysqli_query($db,$sql1) or trigger_error(mysqli_error()." in ". $sql1);
 $myrow = mysqli_fetch_array($result);
 if (!empty($myrow['idUsers'])) {
     echo ("Извините, введённый вами логин уже зарегистрирован. Введите другой логин.");
 }
 // если такого нет, то сохраняем данные
-$result2 = mysqli_query($db,$sql2) or trigger_error(mysqli_error($db)." in ". $sql2);
-$result3 =  mysqli_query($db,$sql2) or trigger_error(mysqli_error($db)." in ". $sql3);
+$result2 = mysqli_query($db,$insertLogin) or trigger_error(mysqli_error($db)." in ". $insertLogin);
+$result3 =  mysqli_query($db,$insertUserInfo) or trigger_error(mysqli_error($db)." in ". $insertUserInfo);
 
     // Проверяем, есть ли ошибки
 if ($result2 && $result3) {

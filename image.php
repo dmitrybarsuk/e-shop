@@ -4,7 +4,7 @@ include("db_connection.php");
 if (isset($_GET['id'])) {
     $id = (int)$_GET['id'];
     if ($id > 0) {
-        $query = "SELECT `picture` FROM `Pictures` WHERE `idProducts`= '$id'";
+        $query = "SELECT picture FROM `Pictures` WHERE `idProducts`= '$id'";
         // Выполняем запрос и получаем файл
         $res = mysqli_query($db,$query);
         if (mysqli_num_rows($res) == 1) {
